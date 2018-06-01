@@ -6,7 +6,7 @@ const Home = ({ posts }) => (
   <div>
     {posts.length ?
       posts.map((post) => <Post key={post.slug} {...post} titleLink />)
-      : <p>Awaiting Posts!</p>}
+      : <p>No posts found!</p>}
   </div>
 
 )
