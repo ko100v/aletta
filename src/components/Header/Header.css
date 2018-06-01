@@ -1,0 +1,41 @@
+.header {
+  background: linear-gradient(to right, #24A3CF, #3650A0)
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.title {
+  color: #FFFFFF;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.list-item {
+
+}
+
+.link {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.link:hover, :focus {
+  color: #24A3CF
+}

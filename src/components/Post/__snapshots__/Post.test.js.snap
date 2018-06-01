@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Post <Link />  1`] = `
+<div>
+  <h2
+    className="title"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/post/undefined"
+    >
+      My Post
+       
+    </Link>
+  </h2>
+  <p
+    className="content"
+  />
+</div>
+`;
+
+exports[`Render Post <p /> 1`] = `
+<div>
+  <h2
+    className="title"
+  >
+    My Post
+  </h2>
+  <p
+    className="content"
+  />
+</div>
+`;
