@@ -10,7 +10,7 @@ exports[`Header component should render as expected 1`] = `
     <h1
       className="title"
     >
-      Aletta
+      Xogito
     </h1>
     <nav>
       <ul

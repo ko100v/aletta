@@ -11,7 +11,7 @@ class Header extends Component {
     return (
       <header className={header}>
         <div className={container}>
-          <h1 className={title}>Aletta</h1>
+          <h1 className={title}>Xogito</h1>
           <nav >
             <ul className={list}>
               <li className={listItem}>

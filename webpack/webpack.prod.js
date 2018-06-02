@@ -1,15 +1,17 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
+
 
 module.exports = {
-    context: resolve(__dirname, 'src'),
+    context: resolve(__dirname, '../src'),
     entry: {
         app: `./index.js`,
         vendor: ['react', 'react-dom', 'react-router']
     },
     output: {
-        path: resolve(__dirname, 'dist'),
+        path: resolve(__dirname, '../dist'),
         filename: '[name].[chunkhash:6].js',
         publicPath: '/'
     },
@@ -57,11 +59,20 @@ module.exports = {
     performance: {
         hints: 'error'
     },
+    // resolve: {
+    //     alias: {
+    //         react: 'preact-compat',
+    //         'react-dom': 'preact-compat'
+    //     }
+    // },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: `./200.html`,
+            filename: `./200.html`, //`./index.html`,
             template: `./index.html`
         }),
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist'], {
+            root: resolve(__dirname, '..')
+        }),
+        new OfflinePlugin()
     ]
 }
