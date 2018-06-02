@@ -5,8 +5,10 @@
   "author": "ko100v.d",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server",
-    "test": "jest"
+    "start": "webpack-dashboard -- webpack-dev-server --config=webpack/webpack.dev.js",
+    "test": "jest",
+    "predeploy": "webpack --config=webpack/webpack.prod.js -p",
+    "deploy": "surge --project dist --domain https://xogitopwa.surge.sh"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -14,11 +16,11 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
-    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.0.0",
@@ -30,6 +32,7 @@
     "standard": "^11.0.1",
     "standard-loader": "^6.0.1",
     "style-loader": "^0.21.0",
+    "surge": "^0.20.1",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
     "webpack-dashboard": "^2.0.0",

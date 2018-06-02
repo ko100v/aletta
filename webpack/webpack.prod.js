@@ -1,18 +1,31 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-
-const srcDir = resolve(__dirname, 'src')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: `${srcDir}/index.js`,
+    context: resolve(__dirname, 'src'),
+    entry: {
+        app: `./index.js`,
+        vendor: ['react', 'react-dom', 'react-router']
+    },
     output: {
-        filename: 'bundle.js',
+        path: resolve(__dirname, 'dist'),
+        filename: '[name].[chunkhash:6].js',
         publicPath: '/'
     },
     mode: 'development',
-    devServer: {
-        historyApiFallback: true
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                'commons': {
+                    minChunks: 2,
+                    chunks: 'all',
+                    name: 'commons',
+                    priority: 10,
+                    enforce: true,
+                },
+            },
+        }
     },
     module: {
         rules: [
@@ -40,10 +53,15 @@ module.exports = {
             }
         ]
     },
+    devtool: 'source-map',
+    performance: {
+        hints: 'error'
+    },
     plugins: [
         new HtmlWebpackPlugin({
-            template: `${srcDir}/index.html`
+            filename: `./200.html`,
+            template: `./index.html`
         }),
-        new DashboardPlugin()
+        new CleanWebpackPlugin(['dist']),
     ]
 }
