@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --config=webpack/webpack.dev.js",
     "test": "jest",
-    "predeploy": "webpack --config=webpack/webpack.prod.js -p",
+    "build": "webpack --config=webpack/webpack.prod.js -p",
     "deploy": "surge --project dist --domain https://xogitopwa.surge.sh"
   },
   "devDependencies": {
@@ -17,6 +17,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

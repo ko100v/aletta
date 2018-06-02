@@ -2,6 +2,7 @@ const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 module.exports = {
@@ -73,6 +74,10 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: resolve(__dirname, '..')
         }),
-        new OfflinePlugin()
+        new OfflinePlugin(),
+        new CopyWebpackPlugin([{
+            from: resolve(__dirname, '../icons'),
+            to: resolve(__dirname, '../dist')
+        }])
     ]
 }
