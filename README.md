@@ -1,2 +1,2 @@
 # aletta
-[applink]: http://www.reddit.com
+[I'm an inline-style link](https://app-beauty-allwork.com)
