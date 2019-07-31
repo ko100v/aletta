@@ -1,2 +1,2 @@
 # aletta
-[I'm an inline-style link](https://app-beauty-allwork.com/salesrep,asdasd)
+[I'm an inline-style link](com.allwork.mobile/salesrep,asdasd)
